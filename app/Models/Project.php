@@ -12,5 +12,6 @@ class Project extends Model
         "title",
         "description",
         "thumb",
+        "creation_date",
     ];
 }

@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Admin; // era "App\Http\Controllers"
 
 use App\Http\Controllers\Controller; // Controller di base da importare
 use App\Models\Project;
-use App\Http\Requests\StoreProjectRequest;
-use App\Http\Requests\UpdateProjectRequest;
+use App\Http\Requests\ProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -14,7 +13,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $project = Project::all();
+        return view("admin.projects.index", compact("project"));
     }
 
     /**
@@ -22,15 +22,21 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.projects.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProjectRequest $request)
+    public function store(ProjectRequest $request)
     {
-        //
+        $validati = $request->validated();
+
+        // $newProject->new Project();
+        // $newProject->fill($validati);
+        // $newProject->save();
+
+        return redirect()->route("admin.projects.index");
     }
 
     /**
@@ -52,7 +58,7 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProjectRequest $request, Project $project)
+    public function update(ProjectRequest $request, Project $project)
     {
         //
     }

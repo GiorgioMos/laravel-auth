@@ -18,16 +18,19 @@ class ProjectSeeder extends Seeder
                 'title' => 'progetto 1',
                 'description' => 'descrizione lunga',
                 'thumb' => 'url img',
+                'creation_date' => '22-01-24',
             ],
             [
                 'title' => 'progetto 2',
                 'description' => 'descrizione lunga',
                 'thumb' => 'url img',
+                'creation_date' => '22-01-24',
             ],
             [
                 'title' => 'progetto 3',
                 'description' => 'descrizione lunga',
                 'thumb' => 'url img',
+                'creation_date' => '22-01-24',
             ],
         ];
         foreach ($projects as $project) {
